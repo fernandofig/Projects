@@ -4,7 +4,7 @@
     <Name>ActiveWriter</Name>
     <Author>altinoren.com</Author>
     <Version>10.0.0.1</Version>
-    <Description>A Visual Studio 2010 addin to design domain models and to generate code decorated with ActiveRecord attributes or supported with NHibernate configuration based on the model.</Description>
+    <Description>A Visual Studio 2010/2012 addin to design domain models and to generate code decorated with ActiveRecord attributes or supported with NHibernate configuration based on the model.</Description>
     <Locale>1033</Locale>
     <MoreInfoUrl>http://using.castleproject.org/display/Contrib/ActiveWriter</MoreInfoUrl>
     <GettingStartedGuide>http://using.castleproject.org/display/Contrib/ActiveWriter</GettingStartedGuide>
@@ -16,8 +16,13 @@
         <Edition>Premium</Edition>
         <Edition>Pro</Edition>
       </VisualStudio>
+      <VisualStudio Version="11.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+      </VisualStudio>
     </SupportedProducts>
-    <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.0" />
+    <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.5" />
   </Identifier>
   <References/>
   <Content>
