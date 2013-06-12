@@ -39,7 +39,7 @@ namespace <#= CodeGenerationUtilities.GetPackageNamespace(this.Dsl) #>
     [ProvideProfileAttribute(typeof(ActiveWriterOptions), Castle.ActiveWriter.Common.OptionPageCategory, Castle.ActiveWriter.Common.OptionPageSubCategory, 101, 120, true)]
 	[VSShell::ProvideMenuResource("1000.ctmenu", 4)]
 	[VSShell::ProvideToolboxItems(1)]
-	[VSTextTemplatingHost::ProvideDirectiveProcessor(typeof(global::<#= this.Dsl.Namespace #>.<#= directiveName #>DirectiveProcessor), global::<#= this.Dsl.Namespace #>.<#= directiveName #>DirectiveProcessor.<#= directiveName #>DirectiveProcessorName, "A directive processor that provides access to <#= directiveName #> files")]
+	[global::Microsoft.VisualStudio.TextTemplating.VSHost.ProvideDirectiveProcessor(typeof(global::<#= this.Dsl.Namespace #>.<#= directiveName #>DirectiveProcessor), global::<#= this.Dsl.Namespace #>.<#= directiveName #>DirectiveProcessor.<#= directiveName #>DirectiveProcessorName, "A directive processor that provides access to <#= directiveName #> files")]
 	[global::System.Runtime.InteropServices.Guid(Constants.<#= dslName #>PackageId)]
 	internal sealed partial class <#= dslName #>Package : <#= dslName #>PackageBase, Castle.ActiveWriter.IDialogPageProvider
 	{
