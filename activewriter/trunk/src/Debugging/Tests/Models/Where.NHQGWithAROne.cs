@@ -132,9 +132,9 @@ namespace Debugging.Tests {
             /// <summary>
             /// Query helper for member NHQGWithAROne.Name
             /// </summary>
-            public static NHibernate.Expression.IProjection Name {
+            public static NHibernate.Criterion.IProjection Name {
                 get {
-                    return NHibernate.Expression.Projections.GroupProperty("Name");
+                    return NHibernate.Criterion.Projections.GroupProperty("Name");
                 }
             }
         }

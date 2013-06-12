@@ -30,7 +30,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using NHibernate.Expression;
+using NHibernate.Criterion;
 using NHibernate.Type;
 
 namespace Query
@@ -383,14 +383,14 @@ Use HQL for this functionality...",
 
 		public QueryBuilder<T> Ge(object value)
 		{
-			AbstractCriterion geExpression = new GeExpression(myName, value);
+			AbstractCriterion geExpression = new SimpleExpression(myName, value, " >= ");
 			AddCriterion(geExpression);
 			return this;
 		}
 
 		public QueryBuilder<T> Gt(object value)
 		{
-			AbstractCriterion gtExpression = new GtExpression(myName, value);
+			AbstractCriterion gtExpression = new SimpleExpression(myName, value, " > ");
 			AddCriterion(gtExpression);
 			return this;
 		}
@@ -410,7 +410,7 @@ Use HQL for this functionality...",
 		}
 		public QueryBuilder<T> Le(object value)
 		{
-			AbstractCriterion leExpression = new LeExpression(myName, value);
+			AbstractCriterion leExpression = new SimpleExpression(myName, value, " <= ");
 			AddCriterion(leExpression);
 			return this;
 		}
@@ -424,7 +424,7 @@ Use HQL for this functionality...",
 
 		public QueryBuilder<T> Like(object value)
 		{
-			AbstractCriterion likeExpression = new LikeExpression(myName, value);
+			AbstractCriterion likeExpression = new LikeExpression(myName, value.ToString());
 			AddCriterion(likeExpression);
 			return this;
 		}
@@ -438,7 +438,7 @@ Use HQL for this functionality...",
 
 		public QueryBuilder<T> Lt(object value)
 		{
-			AbstractCriterion ltExpression = new LtExpression(myName, value);
+			AbstractCriterion ltExpression = new SimpleExpression(myName, value, " < ");
 			AddCriterion(ltExpression);
 			return this;
 		}
