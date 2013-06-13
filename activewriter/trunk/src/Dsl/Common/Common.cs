@@ -16,7 +16,7 @@
 #endregion
 namespace Castle.ActiveWriter
 {
-    public static class Common
+    public static partial class Common
     {
         // TODO: Tidy this class.
         public static string[] ARAttributes = new[]
@@ -57,7 +57,7 @@ namespace Castle.ActiveWriter
         public static string ControllersFolderName = "Controllers";
         public static string InMemoryCompiledAssemblyName = "AW";
         public static string ActiveRecordVersion = "1.0.0.0";
-        public static string vsProgIdBase = "!VisualStudio.DTE.10.0:";
+        //public static string vsProgIdBase = "!VisualStudio.DTE.11.0:";
         public const string OptionPageCategory = "ActiveWriter";
         public const string OptionPageSubCategory = "General";
     }
