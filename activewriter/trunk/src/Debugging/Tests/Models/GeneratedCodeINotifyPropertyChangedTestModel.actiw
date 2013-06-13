@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<model dslVersion="1.0.0.0" Id="6afe9f7a-ca44-4e3e-a9bf-ba56316b97c8" namespace="Debugging.Tests" implementINotifyPropertyChanged="true" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+<model dslVersion="10.0.0.1" Id="6afe9f7a-ca44-4e3e-a9bf-ba56316b97c8" namespace="Debugging.Tests" implementINotifyPropertyChanged="true" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
   <additionalImports />
   <classes>
     <modelClass name="NotifyingClass">

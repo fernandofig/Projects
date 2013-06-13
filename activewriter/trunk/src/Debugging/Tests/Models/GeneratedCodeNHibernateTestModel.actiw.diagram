@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="GeneratedCodeNHibernateTestModel">
+<activeRecordMapping dslVersion="10.0.0.1" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="GeneratedCodeNHibernateTestModel">
   <modelMoniker Id="8ddba27c-80c3-48bc-9295-5f8a94949a89" />
   <nestedChildShapes>
     <classShape Id="4f33e912-bd5a-435b-8870-82256f115496" absoluteBounds="0.5, 0.5, 1.5, 1.1439925130208333">

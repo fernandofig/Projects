@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="GeneratedCodeNHQGIntegrationWithNHTestModel">
+<activeRecordMapping dslVersion="10.0.0.1" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="GeneratedCodeNHQGIntegrationWithNHTestModel">
   <modelMoniker Id="862abfff-11b5-4206-81f7-143c783f106d" />
   <nestedChildShapes>
     <classShape Id="10ebc25a-284e-4396-b3d5-5d58f989cd8a" absoluteBounds="0.5, 1.375, 1.5, 1.1439925130208333">

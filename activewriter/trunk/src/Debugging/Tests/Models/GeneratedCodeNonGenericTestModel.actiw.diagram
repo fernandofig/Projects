@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11" isCompleteView="false" name="GeneratedCodeTestModel">
+<activeRecordMapping dslVersion="10.0.0.1" absoluteBounds="0, 0, 11, 11" isCompleteView="false" name="GeneratedCodeTestModel">
   <modelMoniker Id="d31e3081-74cd-42fb-a26f-8ad359cf7aac" />
   <nestedChildShapes>
     <classShape Id="5c19bbb6-6a34-4dc6-a032-8157f66a9f30" absoluteBounds="0.5, 0.5, 1.5, 0.75938964843750023">
