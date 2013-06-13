@@ -80,26 +80,6 @@
     <Compile Include="Tests\GeneratedCodeTest.cs" />
     <Compile Include="Tests\GeneratedCodeVirtualPropertyTest.cs" />
     <Compile Include="Tests\INotifyPropertyChangedTest.cs" />
-    <Compile Include="Tests\Models\GenerateCodeRelationTypeTestModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GenerateCodeRelationTypeTestModel.actiw</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Models\QueryBuilder.cs">
-      <DependentUpon>GeneratedCodeNHQGIntegrationWithARTestModel.actiw</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Models\Where.NHQGWithARMany.cs">
-      <DependentUpon>GeneratedCodeNHQGIntegrationWithARTestModel.actiw</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Models\Where.NHQGWithAROne.cs">
-      <DependentUpon>GeneratedCodeNHQGIntegrationWithARTestModel.actiw</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Models\Where.NHQGWithNHMany.cs">
-      <DependentUpon>GeneratedCodeNHQGIntegrationWithNHTestModel.actiw</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Models\Where.NHQGWithNHOne.cs">
-      <DependentUpon>GeneratedCodeNHQGIntegrationWithNHTestModel.actiw</DependentUpon>
-    </Compile>
     <Compile Include="Tests\NestedClassTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -183,18 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe-Tests.txt" />
-    <EmbeddedResource Include="Tests\Models\NHPost.hbm.xml">
-      <DependentUpon>GeneratedCodeNHibernateTestModel.actiw</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tests\Models\NHBlog.hbm.xml">
-      <DependentUpon>GeneratedCodeNHibernateTestModel.actiw</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tests\Models\NHQGWithNHMany.hbm.xml">
-      <DependentUpon>GeneratedCodeNHQGIntegrationWithNHTestModel.actiw</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tests\Models\NHQGWithNHOne.hbm.xml">
-      <DependentUpon>GeneratedCodeNHQGIntegrationWithNHTestModel.actiw</DependentUpon>
-    </EmbeddedResource>
     <None Include="TestMacros.vb" />
     <None Include="Tests\Models\GenerateCodeRelationTypeTestModel.actiw">
       <Generator>ActiveWriterCodeGenerator</Generator>
