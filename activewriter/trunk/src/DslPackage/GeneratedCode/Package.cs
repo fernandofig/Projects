@@ -12,7 +12,6 @@ using VSShell = global::Microsoft.VisualStudio.Shell;
 using DslShell = global::Microsoft.VisualStudio.Modeling.Shell;
 using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 using DslModeling = global::Microsoft.VisualStudio.Modeling;
-using VSTextTemplatingHost = global::Microsoft.VisualStudio.TextTemplating.VSHost;
 using System;
 using System.Diagnostics;
 using System.Drawing.Design;
@@ -24,7 +23,7 @@ namespace Castle.ActiveWriter
 	/// <summary>
 	/// This class implements the VS package that integrates this DSL into Visual Studio.
 	/// </summary>
-	[VSShell::DefaultRegistryRoot("Software\\Microsoft\\VisualStudio\\10.0")]
+	[VSShell::DefaultRegistryRoot("Software\\Microsoft\\VisualStudio\\15.0")]
 	[VSShell::PackageRegistration(RegisterUsing = VSShell::RegistrationMethod.Assembly, UseManagedResourcesOnly = true)]
 	[VSShell::ProvideToolWindow(typeof(ActiveWriterExplorerToolWindow), MultiInstances = false, Style = VSShell::VsDockStyle.Tabbed, Orientation = VSShell::ToolWindowOrientation.Right, Window = "{3AE79031-E1BC-11D0-8F78-00A0C9110057}")]
 	[VSShell::ProvideToolWindowVisibility(typeof(ActiveWriterExplorerToolWindow), Constants.ActiveWriterEditorFactoryId)]
@@ -35,51 +34,59 @@ namespace Castle.ActiveWriter
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"CreateClassF1Keyword", 
 					"@ClassToolboxBitmap;Castle.ActiveWriter.Dsl.dll", 
-					0xff00ff)]
+					0xff00ff,
+					Index = 0)]
 	[VSShell::ProvideStaticToolboxItem("Castle.ActiveWriter.ActiveWriterToolboxTab",
 					"@ManyToOneRelationshipToolboxItem;Castle.ActiveWriter.Dsl.dll", 
 					"Castle.ActiveWriter.ManyToOneRelationshipToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"ConnectRelationF1Keyword", 
 					"@ManyToOneRelationshipToolboxBitmap;Castle.ActiveWriter.Dsl.dll", 
-					0xff00ff)]
+					0xff00ff,
+					Index = 1)]
 	[VSShell::ProvideStaticToolboxItem("Castle.ActiveWriter.ActiveWriterToolboxTab",
 					"@ManyToManyRelationshipToolboxItem;Castle.ActiveWriter.Dsl.dll", 
 					"Castle.ActiveWriter.ManyToManyRelationshipToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"ManyToManyRelationship", 
 					"@ManyToManyRelationshipToolboxBitmap;Castle.ActiveWriter.Dsl.dll", 
-					0xff00ff)]
+					0xff00ff,
+					Index = 2)]
 	[VSShell::ProvideStaticToolboxItem("Castle.ActiveWriter.ActiveWriterToolboxTab",
 					"@OneToOneRelationshipToolboxItem;Castle.ActiveWriter.Dsl.dll", 
 					"Castle.ActiveWriter.OneToOneRelationshipToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"OneToOneRelationship", 
 					"@OneToOneRelationshipToolboxBitmap;Castle.ActiveWriter.Dsl.dll", 
-					0xff00ff)]
+					0xff00ff,
+					Index = 3)]
 	[VSShell::ProvideStaticToolboxItem("Castle.ActiveWriter.ActiveWriterToolboxTab",
 					"@NestedClassToolboxItem;Castle.ActiveWriter.Dsl.dll", 
 					"Castle.ActiveWriter.NestedClassToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"NestedClassF1Keyword", 
 					"@NestedClassToolboxBitmap;Castle.ActiveWriter.Dsl.dll", 
-					0xff00ff)]
+					0xff00ff,
+					Index = 4)]
 	[VSShell::ProvideStaticToolboxItem("Castle.ActiveWriter.ActiveWriterToolboxTab",
 					"@NestedRelationshipToolboxItem;Castle.ActiveWriter.Dsl.dll", 
 					"Castle.ActiveWriter.NestedRelationshipToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"NestedRelationship", 
 					"@NestedRelationshipToolboxBitmap;Castle.ActiveWriter.Dsl.dll", 
-					0xff00ff)]
+					0xff00ff,
+					Index = 5)]
 	[VSShell::ProvideStaticToolboxItem("Castle.ActiveWriter.ActiveWriterToolboxTab",
 					"@InheritanceRelationshipToolboxItem;Castle.ActiveWriter.Dsl.dll", 
 					"Castle.ActiveWriter.InheritanceRelationshipToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"InheritanceRelationship", 
 					"@InheritanceRelationshipToolboxBitmap;Castle.ActiveWriter.Dsl.dll", 
-					0xff00ff)]
+					0xff00ff,
+					Index = 6)]
 	[VSShell::ProvideEditorFactory(typeof(ActiveWriterEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(ActiveWriterEditorFactory), "." + Constants.DesignerFileExtension, 50)]
+	[VSShell::ProvideEditorLogicalView(typeof(ActiveWriterEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer
 	[DslShell::ProvideRelatedFile("." + Constants.DesignerFileExtension, Constants.DefaultDiagramExtension,
 		ProjectSystem = DslShell::ProvideRelatedFileAttribute.CSharpProjectGuid,
 		FileOptions = DslShell::RelatedFileType.FileName)]
@@ -90,6 +97,7 @@ namespace Castle.ActiveWriter
 	[global::System.Runtime.InteropServices.ComVisible(true)]
 	[DslShell::ProvideBindingPath]
 	[DslShell::ProvideXmlEditorChooserBlockSxSWithXmlEditor(@"ActiveWriter", typeof(ActiveWriterEditorFactory))]
+
 	internal abstract partial class ActiveWriterPackageBase : DslShell::ModelingPackage
 	{
 		protected global::Castle.ActiveWriter.ActiveWriterToolboxHelper toolboxHelper;	
@@ -185,7 +193,7 @@ namespace Castle.ActiveWriter
     [ProvideProfileAttribute(typeof(ActiveWriterOptions), Castle.ActiveWriter.Common.OptionPageCategory, Castle.ActiveWriter.Common.OptionPageSubCategory, 101, 120, true)]
 	[VSShell::ProvideMenuResource("1000.ctmenu", 4)]
 	[VSShell::ProvideToolboxItems(1)]
-	[VSTextTemplatingHost::ProvideDirectiveProcessor(typeof(global::Castle.ActiveWriter.ActiveWriterDirectiveProcessor), global::Castle.ActiveWriter.ActiveWriterDirectiveProcessor.ActiveWriterDirectiveProcessorName, "A directive processor that provides access to ActiveWriter files")]
+	[global::Microsoft.VisualStudio.TextTemplating.VSHost.ProvideDirectiveProcessor(typeof(global::Castle.ActiveWriter.ActiveWriterDirectiveProcessor), global::Castle.ActiveWriter.ActiveWriterDirectiveProcessor.ActiveWriterDirectiveProcessorName, "A directive processor that provides access to ActiveWriter files")]
 	[global::System.Runtime.InteropServices.Guid(Constants.ActiveWriterPackageId)]
 	internal sealed partial class ActiveWriterPackage : ActiveWriterPackageBase, Castle.ActiveWriter.IDialogPageProvider
 	{

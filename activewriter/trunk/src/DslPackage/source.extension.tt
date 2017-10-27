@@ -17,7 +17,7 @@
 
   // The name of the Dsl Project - Must be updated if the project is renamed.
   string dslProjectName = "Dsl";
-  string dteVersion = System.IO.File.ReadAllText(".\\DslPackage\\dte.version").Trim('\n', '\r', ' ');
+  string dteVersion = "15.0";
   string localeId = "1033";
 #>
 <?xml version="1.0" encoding="utf-8"?>

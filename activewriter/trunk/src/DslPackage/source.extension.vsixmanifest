@@ -11,7 +11,7 @@
     <Icon>Resources\File.ico</Icon>
     <PreviewImage></PreviewImage>
     <SupportedProducts>
-      <VisualStudio Version="10.0">
+      <VisualStudio Version="15.0">
         <Edition>Ultimate</Edition>
         <Edition>Premium</Edition>
         <Edition>Pro</Edition>

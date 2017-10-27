@@ -18,6 +18,7 @@ namespace Castle.ActiveWriter
 {
 	using Microsoft.VisualStudio.Shell;
 
+	[System.CLSCompliant(false)]
 	public interface IDialogPageProvider
     {
         DialogPage GetDialogPage<T>();
