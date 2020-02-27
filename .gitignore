@@ -2,5 +2,6 @@
 [Rr]elease/
 [Bb]in/
 [Oo]bj/
+.vs/
 *.[Uu]ser
 *.suo

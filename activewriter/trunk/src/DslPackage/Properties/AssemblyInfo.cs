@@ -38,4 +38,4 @@ using System.Runtime.ConstrainedExecution;
 [assembly: ComVisible(false)]
 [assembly: CLSCompliant(true)]
 [assembly: ReliabilityContract(Consistency.MayCorruptProcess, Cer.None)]
-[assembly: AssemblyFileVersionAttribute("1.2010.0.1")]
+[assembly: AssemblyFileVersion("1.2010.0.1")]
