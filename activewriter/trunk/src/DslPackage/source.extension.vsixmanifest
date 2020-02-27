@@ -1,29 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
-  <Identifier Id="9f4f10d0-81ad-4308-a398-ba7741f3f7e2">
-    <Name>ActiveWriter</Name>
-    <Author>altinoren.com</Author>
-    <Version>10.0.0.1</Version>
-    <Description>A Visual Studio 2010/2012 addin to design domain models and to generate code decorated with ActiveRecord attributes or supported with NHibernate configuration based on the model.</Description>
-    <Locale>1033</Locale>
-    <MoreInfoUrl>http://using.castleproject.org/display/Contrib/ActiveWriter</MoreInfoUrl>
-    <GettingStartedGuide>http://using.castleproject.org/display/Contrib/ActiveWriter</GettingStartedGuide>
-    <Icon>Resources\File.ico</Icon>
-    <PreviewImage></PreviewImage>
-    <SupportedProducts>
-      <VisualStudio Version="15.0">
-        <Edition>Ultimate</Edition>
-        <Edition>Premium</Edition>
-        <Edition>Pro</Edition>
-      </VisualStudio>
-    </SupportedProducts>
-    <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.5" />
-  </Identifier>
-  <References/>
-  <Content>
-    <VsPackage>|%CurrentProject%;PkgdefProjectOutputGroup|</VsPackage>
-    <MefComponent>|Dsl|</MefComponent>
-    <MefComponent>|%CurrentProject%|</MefComponent>
-    <ItemTemplate>ItemTemplates</ItemTemplate>
-  </Content>
-</Vsix>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+	<Metadata>
+		<Identity Id="9f4f10d0-81ad-4308-a398-ba7741f3f7e2" Version="1.0" Language="en-US" Publisher="Luiz Figueiredo" />
+		<DisplayName>ActiveWriter</DisplayName>
+		<Description xml:space="preserve">A Visual Studio 2010/2012 addin to design domain models and to generate code decorated with ActiveRecord attributes or supported with NHibernate configuration based on the model.</Description>
+		<Tags>NHibernate, Castle ActiveRecord, Model Designer</Tags>
+	</Metadata>
+    <Installation>
+        <InstallationTarget Version="[16.0,17.0)" Id="Microsoft.VisualStudio.Community" />
+    </Installation>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.1.28811.260,17.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+</PackageManifest>
